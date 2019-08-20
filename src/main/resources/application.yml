@@ -1,0 +1,14 @@
+
+#默认为false，如果想用断路由，要打开这个设置
+feign:
+  hystrix:
+    enabled: true
+
+#断路器线程池超时时间,这个值一定要比ribbon超时时间长，毫秒
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 160000
